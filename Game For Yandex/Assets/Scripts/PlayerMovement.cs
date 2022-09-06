@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
     public Transform groundCheck;
+    public Animator anim;
 
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
@@ -29,8 +30,17 @@ public class PlayerMovement : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
+        if (x != 0 || z != 0)
+        {
+            anim.SetBool("Walk", true);
+        }
+        else
+        {
+            anim.SetBool("Walk", false);
+        }
+
         Vector3 move = transform.right * x + transform.forward * z;
-       
+
         controller.Move(move * speed* Time.deltaTime);
 
         if (Input.GetButtonDown("Jump") && isGrounded)
