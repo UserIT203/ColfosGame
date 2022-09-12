@@ -347,14 +347,15 @@ GameObject:
   m_Component:
   - component: {fileID: 6519658834391600193}
   - component: {fileID: 2065252443562793181}
-  - component: {fileID: 3747513534957646318}
+  - component: {fileID: -1348608574760506047}
+  - component: {fileID: -430065199573665793}
   - component: {fileID: 664306357313701517}
   - component: {fileID: 6519658834391600192}
   - component: {fileID: 6519658834391600195}
   - component: {fileID: 6519658834391600194}
   m_Layer: 0
   m_Name: 'Enemy '
-  m_TagString: Untagged
+  m_TagString: 'Enemy '
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -392,7 +393,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 558f1d8e6b58a274b94b861d7c695fa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3747513534957646318
+  animator: {fileID: 6519658834391600194}
+--- !u!114 &-1348608574760506047
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -401,9 +403,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 8696587976518894338}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 705eedb46a0aa3148abbd68cf2be5b98, type: 3}
+  m_Script: {fileID: 11500000, guid: 0b9cf0ed8b8cf914381994399b8b25e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  radius: 4
+  interactionTransform: {fileID: 6519658834391600193}
+--- !u!114 &-430065199573665793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8696587976518894338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8cffadd44e1ec4409a1052c05bdc799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 40
+  damage:
+    baseValue: 5
 --- !u!54 &664306357313701517
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -431,8 +450,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.8613853, y: 4.006583, z: 1}
-  m_Center: {x: 0.08449745, y: 2.03328, z: 0}
+  m_Size: {x: 1.7985935, y: 4.006583, z: 1.8539848}
+  m_Center: {x: 0.06791592, y: 2.03328, z: 0.1055851}
 --- !u!195 &6519658834391600195
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -443,7 +462,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.2
-  m_Speed: 2
+  m_Speed: 3
   m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 120

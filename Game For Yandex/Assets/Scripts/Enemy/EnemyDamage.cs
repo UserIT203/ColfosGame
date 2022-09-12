@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
+    [Header("Damage Character")]
     public float enemyDamage = 5;
+    public float enemyForce = 450;
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            collision.transform.GetComponent<PlayerHealth>().TakeDamage(enemyDamage);
-        }
-    }
+
 }
