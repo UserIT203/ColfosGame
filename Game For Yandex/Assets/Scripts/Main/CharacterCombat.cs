@@ -7,6 +7,11 @@ public class CharacterCombat : MonoBehaviour
 {
     private CharacterStats myStats;
 
+    public float attackCooldown = 5f;
+    private float lastAttackTime;
+
+    public bool attack = false;
+
     private void Start()
     {
         myStats = GetComponent<CharacterStats>();
@@ -14,7 +19,22 @@ public class CharacterCombat : MonoBehaviour
 
     public void Attack(CharacterStats targetStats)
     {
-        targetStats.TakeDamage(myStats.damage.GetValue());
+        if (attack)
+        {
+            Debug.Log("Attack");
+
+            targetStats.TakeDamage(myStats.damage.GetValue());
+
+            lastAttackTime = Time.time;
+            attack = false;
+        }
     }
 
+    private void Update()
+    {
+        if (Time.time - lastAttackTime >= attackCooldown)
+        {
+            attack = true;
+        }
+    }
 }

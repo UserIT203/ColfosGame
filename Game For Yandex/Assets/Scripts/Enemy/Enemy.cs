@@ -6,22 +6,28 @@ using UnityEngine;
 public class Enemy : Interactable
 {
     PlayerManager playerManager;
+
     CharacterStats myStats;
+    CharacterCombat myCombat;
+
+    EnemyMovement enemyMovement;
 
     private void Start()
     {
         playerManager = PlayerManager.instance;
+
         myStats = GetComponent<CharacterStats>();
+        myCombat = GetComponent<CharacterCombat>();
+
+        enemyMovement = GetComponent<EnemyMovement>();
     }
 
-    public override void Interact()
+    public void OnAttack()
     {
-        base.Interact();
-
-        CharacterCombat playerCombat =  playerManager.player.GetComponent<CharacterCombat>();
-        if (playerCombat != null)
+        CharacterStats playerStats = playerManager.player.GetComponent<CharacterStats>();
+        if (myCombat != null && enemyMovement.aroundPlayer)
         {
-            playerCombat.Attack(myStats);
+            myCombat.Attack(playerStats);
         }
     }
 }

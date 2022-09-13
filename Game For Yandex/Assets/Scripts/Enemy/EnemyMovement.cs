@@ -8,6 +8,8 @@ public class EnemyMovement : MonoBehaviour
     private Transform target;
     NavMeshAgent agent;
 
+    public bool aroundPlayer { get; private set; }
+
     private void Start()
     {
         target = PlayerManager.instance.player.transform;
@@ -25,17 +27,20 @@ public class EnemyMovement : MonoBehaviour
     {
         agent.SetDestination(target.position);
 
+
         float distance = Vector3.Distance(target.position, transform.position);
 
         if (distance <= agent.stoppingDistance + 1)
         {
-            animator.SetBool("aroundPlayer", true);
+            aroundPlayer = true;
 
+            animator.SetTrigger("isAttack");
             FaceTarget();
         }
         else
-            animator.SetBool("aroundPlayer", false);
+            aroundPlayer = false;
 
+        animator.SetBool("aroundPlayer", aroundPlayer);
     }
 
 }

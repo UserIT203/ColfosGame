@@ -11,8 +11,16 @@ public class PlayerHealth : MonoBehaviour
     [Header("UI Links")]
     public Text healthText;
 
-    private void Awake()
+    private CharacterStats character;
+
+    private void Start()
     {
-        CharacterStats character = GetComponent<CharacterStats>();
+        character = GetComponent<CharacterStats>();
+        AddHealthText();
+    }
+
+    public void AddHealthText()
+    {
+        healthText.text = System.Convert.ToString(character.currentHealth) + " | " + System.Convert.ToString(character.maxHealth);
     }
 }
