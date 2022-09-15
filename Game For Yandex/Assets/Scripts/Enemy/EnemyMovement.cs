@@ -5,8 +5,10 @@ public class EnemyMovement : MonoBehaviour
 {
     public Animator animator;
 
+    private EnemyDamage enemyDamage;
+
     private Transform target;
-    NavMeshAgent agent;
+    private NavMeshAgent agent;
 
     public bool aroundPlayer { get; private set; }
 
@@ -14,6 +16,8 @@ public class EnemyMovement : MonoBehaviour
     {
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
+
+        enemyDamage = GetComponent<EnemyDamage>();
     }
 
     private void FaceTarget()
@@ -33,14 +37,28 @@ public class EnemyMovement : MonoBehaviour
         if (distance <= agent.stoppingDistance + 1)
         {
             aroundPlayer = true;
+            animator.SetBool("aroundPlayer", true);
 
-            animator.SetTrigger("isAttack");
+            enemyDamage.PlayAttackAnimation();
+            if (enemyDamage.isAttack)
+            {
+                agent.isStopped = true;
+            }
+
+
             FaceTarget();
         }
         else
-            aroundPlayer = false;
+        {
+            if (!enemyDamage.isAttack)
+            {
+                agent.isStopped = false;
+                animator.SetBool("aroundPlayer", false);
+            }
 
-        animator.SetBool("aroundPlayer", aroundPlayer);
+            aroundPlayer = false;
+        }
+
     }
 
 }

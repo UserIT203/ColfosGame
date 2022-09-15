@@ -21,13 +21,11 @@ public class CharacterCombat : MonoBehaviour
     {
         if (attack)
         {
-            Debug.Log("Attack");
-
             targetStats.TakeDamage(myStats.damage.GetValue());
 
             lastAttackTime = Time.time;
-            attack = false;
         }
+        attack = false;
     }
 
     private void Update()
