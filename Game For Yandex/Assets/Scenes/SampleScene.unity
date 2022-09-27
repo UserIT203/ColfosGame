@@ -429,7 +429,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24408
+  m_Name: pb_Mesh37122
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2242,6 +2242,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeGun: 1
   kindGun: 1
+  allBullets: 100
+  bulletsInGun: 0
 --- !u!1 &316685217
 GameObject:
   m_ObjectHideFlags: 0
@@ -2436,7 +2438,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 432626120}
   m_LocalRotation: {x: -0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.101, y: -2.004, z: -0.27}
+  m_LocalPosition: {x: 0.101, y: -1.963, z: -0.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5755,7 +5757,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24580
+  m_Name: pb_Mesh37328
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8378,8 +8380,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.905551, y: 4.652172, z: 2.4166565}
-  m_Center: {x: 0.14689398, y: 0.1529026, z: 0.07873535}
+  m_Size: {x: 2.905551, y: 4.349141, z: 2.4166565}
+  m_Center: {x: 0.14689398, y: 0.3044181, z: 0.07873535}
 --- !u!54 &1131472033
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10113,7 +10115,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24644
+  m_Name: pb_Mesh37402
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11657,7 +11659,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8696587976518894338, guid: def1fc7f4879d0d429d9a3848190b116, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: def1fc7f4879d0d429d9a3848190b116, type: 3}
@@ -11667,7 +11669,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24480
+  m_Name: pb_Mesh37220
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11911,7 +11913,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24630
+  m_Name: pb_Mesh37388
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -68945,7 +68947,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRadius: 0
   enemyPrefab: {fileID: 503514934}
-  startTimeToSpawn: 10
+  startTimeToSpawn: 10000
 --- !u!4 &1503326763
 Transform:
   m_ObjectHideFlags: 0
@@ -68967,7 +68969,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24422
+  m_Name: pb_Mesh37136
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -69238,7 +69240,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24600
+  m_Name: pb_Mesh37348
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -69504,7 +69506,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24542
+  m_Name: pb_Mesh37290
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -69950,7 +69952,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeGun: 0
-  kindGun: 0
+  kindGun: 1
+  allBullets: 100
+  bulletsInGun: 20
 --- !u!1 &2036942946
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Gun : CharactersGuns
 {
+    [HideInInspector] public int allBullets;
+    [HideInInspector] public int bulletsInGun;
+
 
     private void Awake()
     {
-        RangedWeapon rangedWeapon;
+        Debug.Log(allBullets);
     }
 
     private void OnCollisionEnter(Collision collision)
