@@ -18,13 +18,14 @@ public class CharacterStats : MonoBehaviour
         Debug.Log(transform.name + " Die");
     }
 
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
         currentHealth -= damage;
         Debug.Log(transform.name + " takes " + damage);
 
         if (currentHealth <= 0)
         {
+            currentHealth = 0;
             Die();
         }
     }

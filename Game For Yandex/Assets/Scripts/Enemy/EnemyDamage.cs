@@ -48,8 +48,7 @@ public class EnemyDamage : MonoBehaviour
 
         if (isAttack && enemyMovement.aroundPlayer)
         {
-            playerManager.player.GetComponent<CharacterStats>().TakeDamage(enemyStats.damage.GetValue());
-            playerManager.player.GetComponent<PlayerHealth>().AddHealthText();
+            playerManager.player.GetComponent<PlayerHealth>().TakeDamage(enemyStats.damage.GetValue());
         }
 
         lastTimeAttack = Time.time;
