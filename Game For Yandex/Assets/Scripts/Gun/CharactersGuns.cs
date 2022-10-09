@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public enum TypeGun
 {
     Fork,
-    Headn
+    Headn,
+    Pistol
 }
 
 public enum KindGun
@@ -20,11 +21,6 @@ public class CharactersGuns : MonoBehaviour
     public TypeGun typeGun;
     public KindGun kindGun;
 
-}
-
-public class RangedWeapon : CharactersGuns
-{
-    [Header("Bullet")]
-    [SerializeField] int allBullets;
-    [SerializeField] int BulletsInGun;
+    public bool inHeadn = false;
+    public bool inGround;
 }
